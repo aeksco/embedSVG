@@ -1,0 +1,26 @@
+# serverless.yml
+service: embeddy
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: eu-central-1
+  environment:
+    NODE_ENV: dev
+
+functions:
+  app:
+    handler: server.run
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline # serverless-offline needs to be last in the list
