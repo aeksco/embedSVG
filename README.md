@@ -1,3 +1,3 @@
-# Embeddy
+# embedSVG
 
-Embed SVGs that you can pan and zoom
+:bar_chart: An easy embeddable SVG viewer you can pan and zoom
