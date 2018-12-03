@@ -5,15 +5,9 @@
 
 Example:
 ```
-<iframe src="https://r4od9qbgs7.execute-api.eu-central-1.amazonaws.com/dev/?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg" />
+
+<embed style="border: 1px solid black; width: 100%; height: 300px;" src="https://kzjcn50yd2.execute-api.eu-central-1.amazonaws.com/dev/embed?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_FRMA-full.svg"></embed>
+
+<embed style="border:1px solid black; width: 100%; height: 300px;" src="https://kzjcn50yd2.execute-api.eu-central-1.amazonaws.com/dev/embed?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_ImageOntology-full.svg"></embed>
+
 ```
-<iframe src="https://r4od9qbgs7.execute-api.eu-central-1.amazonaws.com/dev/test" />
-
-
-https://r4od9qbgs7.execute-api.eu-central-1.amazonaws.com/dev/?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg
-
-
-<embed src="https://r4od9qbgs7.execute-api.eu-central-1.amazonaws.com/dev/?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg"></embed>
-
-<h1>hello</h1>
-<embed src="https://plsu4vrhwa.execute-api.eu-central-1.amazonaws.com/dev/embed?svgUrl=https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg"></embed>
