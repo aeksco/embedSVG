@@ -4,45 +4,15 @@
     <meta charset="utf-8">
     <title>Emdeddy</title>
 
-    <!-- SVG Pan Zoom -->
-    <script src="https://ariutta.github.io/svg-pan-zoom/dist/svg-pan-zoom.min.js"></script>
-
     <!-- Bootstrap 4 CSS -->
-    <!-- <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/> -->
+    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap/dist/css/bootstrap.min.css"/>
 
   </head>
-  <body style="background: #f3f3f3; color: #222222;">
-
-    <strong class='pl-2 pt-1 m-0' style="position: fixed;">embedSVG</strong>
+  <body>
 
     <div id="container">
-      <%- svgXml %>
+      embedSVG.com!
     </div>
-
-    <script>
-
-      // Don't use window.onLoad like this in production, because it can only listen to one function.
-      window.onload = function() {
-
-        // Expose to window namespase for testing purposes
-        window.zoomTiger = svgPanZoom('#embeddy-svg', {
-          zoomEnabled: true,
-          controlIconsEnabled: true,
-          fit: true,
-          center: true,
-          contain: true
-          // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
-        });
-
-        // document.getElementById('enable').addEventListener('click', function() {
-        //   window.zoomTiger.enableControlIcons();
-        // })
-        // document.getElementById('disable').addEventListener('click', function() {
-        //   window.zoomTiger.disableControlIcons();
-        // })
-      };
-
-    </script>
 
   </body>
 </html>
