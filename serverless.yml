@@ -22,5 +22,5 @@ functions:
           method: ANY
           cors: true
 
-plugins:
-  - serverless-offline # serverless-offline needs to be last in the list
+# plugins:
+#   - serverless-offline # serverless-offline needs to be last in the list
