@@ -28,26 +28,36 @@ window.app.layout = {
     <div class='row mt-2 pt-4'>
 
       <div class='col-sm-12'>
-        <h4>Embeddy</h4>
-        <p class="lead mb-0">The diagrams describe the five sub-ontologies that complete the FRMA Ontology</p>
-        <small>You may zoom and pan each diagram.</small>
+        <p class="lead mb-0">Enter a URL to an SVG image you would like to embed</p>
       </div>
 
 
       <div class='col-sm-12'>
         <div class='form-group'>
           <label>SVG URL</label>
-          <input class="form-control" v-model="svgUrl" />
-
-          <input class="form-control" type="number" v-model="width" />
-          <input class="form-control" type="number" v-model="height" />
-
-          <button class="btn btn-success" @click="showing = !showing">load<button/>
+          <input class="form-control" tyoe="url" v-model="svgUrl" />
         </div>
       </div>
 
-      <div class='col-sm-12 mt-3'>
+      <div class='col-sm-4'>
+        <input class="form-control" type="number" v-model="width" />
+      </div>
+      <div class='col-sm-4'>
+        <input class="form-control" type="number" v-model="height" />
+      </div>
+      <div class='col-sm-4'>
+        <button class="btn btn-success btn-block" @click="reload()">
+          <i class="fa fa-refresh"></i>
+          Reload
+        </button>
+      </div>
+
+      <div class='col-sm-12 mt-3 d-flex justify-content-center'>
         <svg-viewer :svgUrl="svgUrl" :width="width" :height="height" v-if="showing" />
+      </div>
+
+      <div class='col-sm-12 mt-3 d-flex justify-content-center'>
+        <pre class="bg-dark text-light border-light">{{embedCode}}</pre>
       </div>
 
     </div>
@@ -55,9 +65,31 @@ window.app.layout = {
   data () {
     return {
       showing: true,
-      height: 400,
-      width: 400,
+      height: 200,
+      width: 600,
       svgUrl: 'https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg'
+    }
+  },
+  computed: {
+    embedCode () {
+      return `<embed
+        src="https://embedSvg.com/embed?svgUrl=${this.svgUrl}"
+        type="image/svg+xml"
+        class="border-light"
+        style="height: ${this.width}px"
+        width="${this.width}px"
+      >
+        Your browser does not support SVG
+      </embed>
+      `
+    }
+  },
+  methods: {
+    reload () {
+      this.showing = false;
+      setTimeout(() => {
+        this.showing = true
+      }, 100)
     }
   }
 };
