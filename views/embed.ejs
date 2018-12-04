@@ -13,7 +13,7 @@
   </head>
   <body style="background: #f3f3f3; color: #222222; overflow: hidden;">
 
-    <strong class='pl-2 pt-1 m-0' style="position: fixed;">embedSVG</strong>
+    <a class='pl-2 pt-1 m-0' href="/" style="position: fixed; font-family: Helvetica; text-decoration: none;">embedSVG.com</a>
 
     <div id="container">
       <%- svgXml %>
@@ -30,7 +30,8 @@
           controlIconsEnabled: true,
           fit: true,
           center: true,
-          contain: true
+          contain: true,
+          minZoom: 0.1
           // viewportSelector: document.getElementById('demo-tiger').querySelector('#g4') // this option will make library to misbehave. Viewport should have no transform attribute
         });
 

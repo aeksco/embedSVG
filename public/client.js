@@ -17,7 +17,8 @@ Vue.component('svg-viewer', {
   `,
   computed: {
     srcUrl () {
-      return "https://kzjcn50yd2.execute-api.eu-central-1.amazonaws.com/dev/embed?svgUrl=" + this.svgUrl
+      // return "https://kzjcn50yd2.execute-api.eu-central-1.amazonaws.com/dev/embed?svgUrl=" + this.svgUrl
+      return "/embed?svgUrl=" + this.svgUrl
     }
   }
 })
@@ -27,37 +28,51 @@ window.app.layout = {
   template: `
     <div class='row mt-2 pt-4'>
 
-      <div class='col-sm-12'>
-        <p class="lead mb-0">Enter a URL to an SVG image you would like to embed</p>
-      </div>
+      <div class='col-sm-6'>
+        <div class='row'>
 
+          <div class='col-sm-12'>
+            <div class='form-group'>
+              <label>SVG URL</label>
+              <input class="form-control" tyoe="url" v-model="svgUrl" />
+            </div>
+          </div>
 
-      <div class='col-sm-12'>
-        <div class='form-group'>
-          <label>SVG URL</label>
-          <input class="form-control" tyoe="url" v-model="svgUrl" />
+          <div class='col-sm-6'>
+            <div class='form-group'>
+              <label>Width</label>
+              <input class="form-control" type="number" v-model="width" />
+            </div>
+          </div>
+
+          <div class='col-sm-6'>
+            <div class='form-group'>
+              <label>Height</label>
+              <input class="form-control" type="number" v-model="height" />
+            </div>
+          </div>
+
+          <div class='col-sm-12'>
+            <button class="btn btn-success btn-block" @click="reload()">
+              <i class="fa fa-refresh"></i>
+              Reload
+            </button>
+          </div>
+
         </div>
       </div>
 
-      <div class='col-sm-4'>
-        <input class="form-control" type="number" v-model="width" />
-      </div>
-      <div class='col-sm-4'>
-        <input class="form-control" type="number" v-model="height" />
-      </div>
-      <div class='col-sm-4'>
-        <button class="btn btn-success btn-block" @click="reload()">
-          <i class="fa fa-refresh"></i>
-          Reload
-        </button>
-      </div>
+      <div class='col-sm-6'>
+        <div class='row'>
+          <div class='col-sm-12'>
+            <p class="lead mb-0">Preview</p>
 
-      <div class='col-sm-12 mt-3 d-flex justify-content-center'>
-        <svg-viewer :svgUrl="svgUrl" :width="width" :height="height" v-if="showing" />
-      </div>
+            <div class='col-sm-12 mt-3 d-flex justify-content-center'>
+              <svg-viewer :svgUrl="svgUrl" :width="width" :height="height" v-if="showing" />
+            </div>
 
-      <div class='col-sm-12 mt-3 d-flex justify-content-center'>
-        <pre class="bg-dark text-light border-light">{{embedCode}}</pre>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -65,13 +80,14 @@ window.app.layout = {
   data () {
     return {
       showing: true,
-      height: 200,
+      height: 400,
       width: 600,
       svgUrl: 'https://raw.githubusercontent.com/FRMA-Ontology/diagrams/master/concept-maps/oe_12/svg/OE_X_HairOntology-full.svg'
     }
   },
   computed: {
     embedCode () {
+      // <pre class="bg-dark text-light border-light">{{embedCode}}</pre>
       return `<embed
         src="https://embedSvg.com/embed?svgUrl=${this.svgUrl}"
         type="image/svg+xml"
@@ -99,10 +115,10 @@ window.app.splash = {
     <div class='row h-100 mt-4 pt-4 align-items-center justify-content-center'>
       <div class='col-lg-12 text-center'>
         <h1 class='my-3'>
-          <strong>FRMA Ontology</strong>
+          <strong>Embeddy</strong>
         </h1>
         <p class='lead my-3 text-muted'>
-          Conceptual Diagrams
+          Easy embeddable SVG viewer you can pan and zoom
         </p>
 
         <a href='#/map' class='btn btn-lg btn-outline-primary my-3'>
