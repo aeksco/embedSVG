@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Serve static client assets
-app.use(express.static('client'));
+app.use(express.static('public'));
 
 // Home page
 app.get('/', function(req, res) { res.render('index'); });
