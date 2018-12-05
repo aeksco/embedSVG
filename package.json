@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon dev.js",
-    "test": "node server.js"
+    "build": "netlify-lambda build express",
+    "start": "node server-local.js"
   },
   "author": "Alexander Schwartzberg",
   "license": "MIT",
