@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Sets up static serving of files
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 // Sets EJS as the view engine
 // app.set('view engine', 'ejs');
