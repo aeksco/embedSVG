@@ -1,9 +1,9 @@
 'use strict';
 const express = require('express');
 const serverless = require('serverless-http');
-const cors = require('cors');
+// const cors = require('cors');
 const bodyParser = require('body-parser');
-const ejs = require('ejs');
+// const ejs = require('ejs');
 
 // // // //
 
@@ -11,7 +11,7 @@ const ejs = require('ejs');
 const app = express();
 
 // Cors configuration
-app.use(cors());
+// app.use(cors());
 
 // App middleware
 app.use(bodyParser.urlencoded({ extended: false }));
