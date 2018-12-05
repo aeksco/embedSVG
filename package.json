@@ -16,6 +16,8 @@
   "devDependencies": {
     "babel-loader": "^8.0.4",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
     "netlify-lambda": "^0.4.0",
     "serverless-http": "^1.6.0"
