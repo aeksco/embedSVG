@@ -2,3 +2,4 @@
 node_modules
 .serverless
 functions
+yarn-error.log

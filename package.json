@@ -2,7 +2,7 @@
   "name": "embedSVG",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "functions/server.js",
   "scripts": {
     "dev": "nodemon dev.js",
     "build": "netlify-lambda build express",
@@ -10,11 +10,17 @@
   },
   "author": "Alexander Schwartzberg",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.2.0"
+  },
   "devDependencies": {
+    "babel-loader": "^8.0.4",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "netlify-lambda": "^0.4.0",
     "serverless-http": "^1.6.0"
+  },
+  "resolutions": {
+    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3"
   }
 }
