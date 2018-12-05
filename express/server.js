@@ -21,14 +21,15 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 // Sets EJS as the view engine
-// app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.end();
+  // res.writeHead(200, { 'Content-Type': 'text/html' });
+  // res.write('<h1>Hello from Express.js!</h1>');
+  // res.end();
+  res.render('about');
 });
 
 router.get('/another', (req, res) => res.json({ route: req.originalUrl }));
